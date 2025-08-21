@@ -2,7 +2,7 @@ import pandas as pd
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-nltk.download('vader_lexicon')
+nltk.data.find("sentiment/vader_lexicon.zip")
 
 class TextProcessor:
     def __init__(self, df: pd.DataFrame):
