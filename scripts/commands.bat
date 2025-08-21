@@ -1,8 +1,5 @@
 docker build -t hostile-tweets-app .
 
-docker tag hostile-tweets-app default-route-openshift-image-registry.apps.<cluster-domain>/<project>/hostile-tweets-app:latest
-docker push default-route-openshift-image-registry.apps.<cluster-domain>/<project>/hostile-tweets-app:latest
-
 oc delete deployment hostile-tweets-app --ignore-not-found
 oc delete service hostile-tweets-service --ignore-not-found
 oc delete route hostile-tweets-route --ignore-not-found
