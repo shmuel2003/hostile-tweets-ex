@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostile-tweets-app
+  labels:
+    app: hostile-tweets-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hostile-tweets-app
+  template:
+    metadata:
+      labels:
+        app: hostile-tweets-app
+    spec:
+      containers:
+        - name: hostile-tweets-container
+          image: hostile-tweets-app:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: hostile-tweets-config
+            - secretRef:
+                name: hostile-tweets-secrets
