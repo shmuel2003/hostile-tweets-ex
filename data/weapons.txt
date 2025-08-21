@@ -1,0 +1,5 @@
+gun
+ak-47
+rifle
+pistol
+grenade
